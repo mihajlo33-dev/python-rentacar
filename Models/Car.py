@@ -1,35 +1,30 @@
-from sys import audit
-
-
 class Car:
-
     VALID_CARS = {
-         "Audi": [
-        {"model": "A4", "production_year": 2004},
-        {"model": "A3", "production_year": 2013},
-        {"model": "A6", "production_year": 2011},
-        {"model": "Q5", "production_year": 2017},
-        {"model": "TT", "production_year": 2007},
-    ],
-    "BMW": [
-        {"model": "320d", "production_year": 2012},
-        {"model": "530i", "production_year": 2017},
-        {"model": "X3", "production_year": 2011},
-        {"model": "X5", "production_year": 2019},
-    ],
-    "Mercedes-Benz": [
-        {"model": "C200", "production_year": 2015},
-        {"model": "E220", "production_year": 2010},
-        {"model": "A180", "production_year": 2018},
-        {"model": "GLC", "production_year": 2020},
-    ],
+        "Audi": [
+            {"model": "A4", "production_year": 2004},
+            {"model": "A3", "production_year": 2013},
+            {"model": "A6", "production_year": 2011},
+            {"model": "Q5", "production_year": 2017},
+            {"model": "TT", "production_year": 2007},
+        ],
+        "BMW": [
+            {"model": "320d", "production_year": 2012},
+            {"model": "530i", "production_year": 2017},
+            {"model": "X3", "production_year": 2011},
+            {"model": "X5", "production_year": 2019},
+        ],
+        "Mercedes-Benz": [
+            {"model": "C200", "production_year": 2015},
+            {"model": "E220", "production_year": 2010},
+            {"model": "A180", "production_year": 2018},
+            {"model": "GLC", "production_year": 2020},
+        ],
     }
 
     def __init__(self):
         self.__brand = None
         self.__model = None
         self.__production_year = None
-
 
     @property
     def model(self):
@@ -46,10 +41,8 @@ class Car:
         # for car in Car.VALID_CARS[self.__brand]:
         #     valid_models.append(car['model'])
 
-
         if model not in valid_models:
-
-            raise  ValueError("Model is not valid!")
+            raise ValueError("Model is not valid!")
 
         self.__model = model
 
@@ -71,7 +64,6 @@ class Car:
     def production_year(self):
         return self.__production_year
 
-
     @production_year.setter
     def production_year(self, year):
         if self.__model is None:
@@ -82,10 +74,11 @@ class Car:
 
         self.__production_year = year
 
+
 audi = Car()
 
 audi.brand = "Audi"
 audi.model = "A4"
 print(audi.production_year)
 
-#23.20
+# 23.20
